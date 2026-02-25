@@ -1,0 +1,151 @@
+/* ページ全体 */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #74b9ff, #dfe6e9);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    margin: 0;
+    transition: background 0.8s ease;
+}
+
+/* メインカード */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+    text-align: center;
+    width: 420px;
+    max-width: 90%;
+}
+
+/* 天気カード */
+.weather-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    padding: 14px;
+    border-radius: 14px;
+    margin-top: 12px;
+    transition: 0.25s;
+}
+
+.weather-box img {
+    width: 70px;
+}
+
+.weather-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+/* タイトル */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* 入力欄 */
+input {
+    padding: 8px;
+    width: 70%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* ボタン */
+button {
+    padding: 8px 12px;
+    border: none;
+    background: #0984e3;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #74b9ff;
+}
+
+/* 天気表示 */
+#current {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+#result {
+    margin-top: 18px;
+}
+
+#forecast {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.forecast-day {
+    min-width: 90px;
+    flex-shrink: 0;
+    background: linear-gradient(145eg, #ffffff, #f0f4f8);
+    border-radius: 14px;
+    padding: 12px;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.forecast::-webkit-scrollbar {
+    display: none;
+}
+
+/* 気温を強調 */
+.temp {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.loading::after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 3px solid #ccc;
+    border-top-color: #0984e3;
+    border-radius: 50%;
+    margin-left: 8px;
+    animation: spin 0.8s linear infinite;
+}
+
+.loading-state {
+    filter: blur(2px);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input, button {
+    padding: 10px;
+    font-size: 16px;
+}

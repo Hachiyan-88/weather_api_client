@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>天気情報</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h1>天気情報</h1>
+
+            <input type="text" id="city" placeholder="都市名">
+            <!-- <button onclick="getWeather()">天気</button> -->
+            <button onclick="getForecast(); getWeather();">検索</button>
+
+            <!-- <div id="current"></div> 現在地 -->
+            <div id="loading" class="loading">読み込み中...</div>
+            <div id="result" class="weather-box"></div> <!-- 検索都市 -->
+            <div id="forecast" class="weather-box"></div> <!-- 予報 -->
+        </div>
+
+        <script src="script.js"></script>
+
+    </body>
+</html>
