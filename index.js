@@ -6,7 +6,11 @@ const app = express();
 const PORT = 3000;
 
 // publicフォルダをブラウザ表示できるようにする
-app.use(express.static(__dirname + "public"));
+app.use(express.static("public"));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 const API_KEY = process.env.API_KEY;
 
