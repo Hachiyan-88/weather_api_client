@@ -1,3 +1,8 @@
+const API_BASE =
+    location.hostname.includes("localhost")
+        ? "http://localhost:3000"
+        : "";
+
 // 都市名で天気取得
 async function getWeather() {
     showLoading();
@@ -8,7 +13,7 @@ async function getWeather() {
     const city = normalizeCity(input);
 
     try {
-        const res = await fetch(`/api/weather?city=${encodeURIComponent(city)}`);
+        const res = await fetch(`${API_BASE}/weather?city=${encodeURIComponent(city)}`);
         const data = await res.json();
 
         if (data.error) {
@@ -48,7 +53,7 @@ async function getForecast() {
     const city = normalizeCity(input);
 
     try{
-        const res = await fetch(`/api/forecast?city=${encodeURIComponent(city)}`);
+        const res = await fetch(`${API_BASE}/forecast?city=${encodeURIComponent(city)}`);
         const data = await res.json();
 
         if (data.error) {
