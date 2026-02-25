@@ -8,7 +8,7 @@ async function getWeather() {
     const city = normalizeCity(input);
 
     try {
-        const res = await fetch(`/weather?city=${encodeURIComponent(city)}`);
+        const res = await fetch(`/api/weather?city=${encodeURIComponent(city)}`);
         const data = await res.json();
 
         if (data.error) {
@@ -48,7 +48,7 @@ async function getForecast() {
     const city = normalizeCity(input);
 
     try{
-        const res = await fetch(`/forecast?city=${encodeURIComponent(city)}`);
+        const res = await fetch(`/api/forecast?city=${encodeURIComponent(city)}`);
         const data = await res.json();
 
         if (data.error) {
